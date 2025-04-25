@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Annual Science Fair",
+        "date": "2025-05-15",
+        "location": "Community Center",
+        "description": "A fair showcasing science projects by local students."
+    },
+    {
+        "id": 2,
+        "title": "Music Concert",
+        "date": "2025-06-20",
+        "location": "Downtown Amphitheater",
+        "description": "Open-air concert featuring local bands."
+    },
+    {
+        "id": 3,
+        "title": "Jecinta upcoming event",
+        "date": "2025-04-24",
+        "type": "Workshop",
+        "description": "sjv sh h8hf8 9 "
+    },
+    {
+        "id": 4,
+        "title": "1212",
+        "date": "2025-04-30",
+        "type": "Workshop",
+        "description": "Not known"
+    }
+]

@@ -1,25 +1,13 @@
 <?php
-require_once 'includes/config.php';
+$eventsData = file_get_contents(__DIR__ . '/data/events.json');
+$events = json_decode($eventsData, true);
 
-$term = $_GET['term'] ?? '';
-$category = $_GET['category'] ?? '';
+$searchTerm = strtolower($_GET['query'] ?? '');
 
-$sql = "SELECT * FROM events 
-        WHERE (title LIKE ? OR description LIKE ?) 
-        AND category LIKE ? 
-        ORDER BY event_date ASC";
-
-$stmt = $conn->prepare($sql);
-$searchTerm = "%$term%";
-$searchCategory = "%$category%";
-$stmt->bind_param("sss", $searchTerm, $searchTerm, $searchCategory);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$events = [];
-while ($row = $result->fetch_assoc()) {
-  $events[] = $row;
-}
+$filtered = array_filter($events, function ($event) use ($searchTerm) {
+    return strpos(strtolower($event['title']), $searchTerm) !== false ||
+           strpos(strtolower($event['description']), $searchTerm) !== false;
+});
 
 header('Content-Type: application/json');
-echo json_encode($events);
+echo json_encode(array_values($filtered));

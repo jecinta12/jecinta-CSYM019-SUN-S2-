@@ -1,7 +1,8 @@
 FROM php:8.1-apache
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-RUN a2enmod rewrite
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Fix permissions for uploads
-RUN chown -R www-data:www-data /var/www/html/uploads
+COPY ./src /var/www/html/
+COPY ./nginx.conf /etc/apache2/sites-available/000-default.conf
+
+EXPOSE 80
