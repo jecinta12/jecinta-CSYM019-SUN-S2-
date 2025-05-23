@@ -26,5 +26,26 @@
         "date": "2025-04-30",
         "type": "Workshop",
         "description": "Not known"
+    },
+    {
+        "id": 5,
+        "title": "Music festival",
+        "date": "2025-04-24",
+        "type": "Festival",
+        "description": "Come one come all"
+    },
+    {
+        "id": 6,
+        "title": "Music festival",
+        "date": "2025-04-27",
+        "type": "Conference",
+        "description": "LKLKL"
+    },
+    {
+        "id": 7,
+        "title": "music festival",
+        "date": "2025-04-30",
+        "type": "Festival",
+        "description": "hshsh"
     }
 ]
